@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: indowingsflightreview
+    env: python
+    plan: free
+    buildCommand: pip install -r app/requirements.txt
+    startCommand: python app/serve.py --port $PORT
+    envVars:
+      - key: BOKEH_ALLOW_WS_ORIGIN
+        value: indowingsflightreview.onrender.com
